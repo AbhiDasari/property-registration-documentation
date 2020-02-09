@@ -21,7 +21,7 @@ services:
       - FABRIC_CA_SERVER_CA_NAME=ca.registrar.property-registration-network.com
       - FABRIC_CA_SERVER_TLS_ENABLED=false
       # - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.registrar.property-registration-network.com-cert.pem
-      # - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/2bed5df2d39917e5e9591c30db23c4094135b943aec98fa6dc0bf1b749775e19_sk
+      # - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/993e9dbc0b1cc4ed25976c5939c36ce30bfdb9f0c19049976165877bb21f8ce1_sk
     ports:
       - "7054:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d' # --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.registrar.property-registration-network.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/754fccf4ad3f6a483161cf597b79fbdbdadaf1ee2f024e79da8c8e9b8bfb6dcb_sk
@@ -38,7 +38,7 @@ services:
       - FABRIC_CA_SERVER_CA_NAME=ca.users.property-registration-network.com
       - FABRIC_CA_SERVER_TLS_ENABLED=false
       # - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.users.property-registration-network.com-cert.pem
-      # - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/cb24b0483e8a1988f53fb25a72098128dea8b878008de7e158221d263c85a06b_sk
+      # - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/4f9948d63cce3b47791ac31fd7015ba20c55019a4a3b77d79184ba26e7e22069_sk
     ports:
       - "8054:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d' # --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.users.property-registration-network.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/69f46c1ef51a71ee0aaadc9cef23aef7b44df2b1e84dad62484980170c01aa22_sk
@@ -120,7 +120,6 @@ services:
     volumes:
       - /var/run/:/host/var/run/
       - ./../chaincode/:/opt/gopath/src/github.com/hyperledger/fabric/peer/chaincode/
-      - ./../chaincode-advanced/:/opt/gopath/src/github.com/hyperledger/fabric/peer/chaincode-advanced/
       - ./crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
       - ./scripts:/opt/gopath/src/github.com/hyperledger/fabric/peer/scripts/
       - ./channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts
@@ -159,7 +158,6 @@ services:
     volumes:
       - /var/run/:/host/var/run/
       - ./../chaincode:/opt/gopath/src/chaincode
-      - ./../chaincode-advanced:/opt/gopath/src/chaincode-advanced
       - ./crypto-config:/opt/gopath/src/crypto
     networks:
       - registration

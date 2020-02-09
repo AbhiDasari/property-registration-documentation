@@ -120,7 +120,6 @@ services:
     volumes:
       - /var/run/:/host/var/run/
       - ./../chaincode/:/opt/gopath/src/github.com/hyperledger/fabric/peer/chaincode/
-      - ./../chaincode-advanced/:/opt/gopath/src/github.com/hyperledger/fabric/peer/chaincode-advanced/
       - ./crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
       - ./scripts:/opt/gopath/src/github.com/hyperledger/fabric/peer/scripts/
       - ./channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts
@@ -159,7 +158,6 @@ services:
     volumes:
       - /var/run/:/host/var/run/
       - ./../chaincode:/opt/gopath/src/chaincode
-      - ./../chaincode-advanced:/opt/gopath/src/chaincode-advanced
       - ./crypto-config:/opt/gopath/src/crypto
     networks:
       - registration
